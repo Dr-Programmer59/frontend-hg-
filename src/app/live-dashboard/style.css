@@ -1,0 +1,48 @@
+.loader{
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+.stroke{
+    display: block;
+    position: relative;
+    background: white;
+    height: 100%;
+    width: 3px;
+    border-radius: 3px;
+    margin: 0px 2px;
+    animation: animate 1.2s linear infinite;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+@keyframes animate {
+    50%{
+        height:20%;
+    }
+    100%{
+        height:100%;
+    }
+}
+.stroke:nth-child(1){
+    animation-delay: 0s;
+
+}
+.stroke:nth-child(2){
+    animation-delay: 0.3s;
+        
+}
+.stroke:nth-child(3){
+    animation-delay: 0.6s;
+        
+}
+.stroke:nth-child(4){
+    animation-delay: 0.9s;
+        
+}
+.stroke:nth-child(5){
+    animation-delay: 0.3s;
+        
+}
