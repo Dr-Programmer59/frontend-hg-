@@ -5,6 +5,7 @@ import { X, ChevronRight, ChevronLeft } from "lucide-react";
 import axios from "axios";
 import { usePathname, useRouter } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
+import { log } from "console";
 
 interface StartLiveStreamProps {
   onClose: () => void;
@@ -44,13 +45,22 @@ const [file, setfile] = useState("")
 const onLiveSubmitHandler = async (e) => {
   e.preventDefault();
   try {
+      console.log(title,file,thumbnailPreview,logoPreview)
       //create a stream on database pending
-      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/stream-create`, { title, file, thumnail:thumbnailPreview,logo:logoPreview }, {
-          headers: {
-              'Content-Type': 'multipart/form-data'
-          },
-          withCredentials: true
-      });
+      const formData = new FormData();
+      formData.append('title', title);
+      formData.append('file', file);
+      // @ts-ignore
+      formData.append('thumbnail', thumbnailPreview);
+      // @ts-ignore
+      formData.append('logo', logoPreview);
+      // @ts-ignore
+      formData.append('headline', formData?.headlineText);
+// @ts-ignore
+    const { data } = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/stream-create`, formData, {
+        
+        withCredentials: true,
+    });
       console.log(data)
       router.push(`/live-dashboard?rooms=${data.roomId}`);
       
@@ -143,7 +153,7 @@ const onLiveSubmitHandler = async (e) => {
 
   const handleCheckStream = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true,audio:true });
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
         setIsStreaming(true);
@@ -397,8 +407,17 @@ const onLiveSubmitHandler = async (e) => {
                     className="w-full px-3 py-2 bg-[#1F2226] border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="Enter headline text"
                   />
+                  
                 </div>
+                <button
+                type="button"
+                onClick={onLiveSubmitHandler}
+                className="bg-primary text-black px-4 py-2 rounded hover:bg-primary/80 transition-colors flex items-center ml-auto"
+              >
+                Start Stream
+              </button>
               </div>
+              
             </div>
           )}
 

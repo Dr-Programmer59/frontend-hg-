@@ -130,7 +130,7 @@ function LatestVideoPerformance() {
 
       {/* Thumbnail Image */}
       <div className="mb-6 rounded-lg overflow-hidden flex justify-center items-center">
-        <Image
+        <img
           src={"/images/main.png"}
           alt="Latest Video Thumbnail"
           className="w-full rounded-lg h-full max-h-[300px] object-cover"

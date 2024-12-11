@@ -32,10 +32,10 @@ export default function Navbar() {
             {/* "/images/logo.png" */}
             <div className="flex-shrink-0">
               <Link href="/" className="text-2xl font-bold text-gray-800">
-                <Image
+                <img
                   src={"/images/logo.png"}
                   alt={"Logo"}
-                  className="h-[70px] md:h-[60px] xs:h-[50px] w-full"
+                  className="h-[120px] md:h-[100px] xs:h-[100px] w-[90px]"
                 />
               </Link>
             </div>

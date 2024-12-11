@@ -82,15 +82,19 @@ const RenderStream = ({ otherStream, handleMainBox, className1, className2, play
         </div>
     ))}
     
-    {/* Banner at the Bottom */}
-    <div className='absolute bottom-0 left-0 right-0 h-[8rem] '>
-        <div className='relative w-full h-full'>
-            <img
-                src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${streamDetails?.banner}`}
-                className={`w-full h-full ${imageClass}`}
-            />
+ {/* Banner at the Bottom */}
+<div className='absolute bottom-0 left-0 right-0 h-[8rem]'>
+    <div className='relative w-full h-full'>
+        <img
+            src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${streamDetails?.banner}`}
+            className={`w-full h-full ${imageClass}`}
+        />
+        <div className="absolute w-full whitespace-nowrap animate-marquee top-10 text-3xl">
+            {streamDetails?.headline}
         </div>
     </div>
+</div>
+
     
     {/* Circular Image at Top Right */}
     <div className='absolute top-2 right-2 w-20 h-20 rounded-full overflow-hidden animate-spin-slow'> 

@@ -82,7 +82,8 @@ const ProductCard = ({
       />
       <div className="absolute inset-0 flex flex-col justify-between p-6 text-white z-10">
         <div className="relative h-48 w-full overflow-hidden rounded-lg">
-          <Image
+          <img
+            //@ts-ignore
             src={product.image}
             alt={product.title}
             layout="fill"

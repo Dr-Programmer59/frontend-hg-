@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       animation: {
         'spin-slow': 'rotatePause 10s ease-in-out infinite',
+        'marquee': 'marquee 20s linear infinite',
         
       },
       colors: {
@@ -38,6 +39,10 @@ const config: Config = {
         "loop-scroll": "loop-scroll 5s linear infinite",
       },
       keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
         rotatePause: {
           '0%': { transform: 'rotate(0deg)' },            // Start at 0 degrees
           '25%': { transform: 'rotate(360deg)' },          // Rotate 360 degrees (complete one rotation)

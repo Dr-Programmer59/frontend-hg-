@@ -63,14 +63,14 @@ export default function CallToAction() {
 
   return (
     <section className="relative bg-gradient-to-br from-[#1F2226] to-[#2A2E32] text-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <Image
+      <img
         height={200}
         width={200}
         src={"/images/boxes.png"}
         alt="Decorative Dots"
         className="absolute bottom-0 left-0 z-1"
       />
-      <Image
+      <img
         height={70}
         width={70}
         src={"/images/vertical-lines.png"}

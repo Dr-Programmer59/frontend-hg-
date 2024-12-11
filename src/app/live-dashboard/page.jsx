@@ -559,7 +559,7 @@ const handleshareScreen=async ()=>{
   };
 
     return (
-        <div className="flex flex-col lg:flex-row h-screen bg-[#1F2226] text-white font-roboto">
+        <div className="flex flex-col lg:flex-row h-screen bg-[#1F2226] text-white font-roboto mb-10">
             <div className="w-full lg:w-[70%] flex flex-col">
                 <div className="flex items-center justify-between p-4 bg-[#1A1D22]">
                     <div className="flex  items-center space-x-4">
@@ -573,7 +573,7 @@ const handleshareScreen=async ()=>{
                     </div>
                 </div>
                 <div className="flex-1 relative">
-                    <RenderStream streamDetails={streamDetails} handleMainBox={handleMainBox} otherStream={otherStream} className1={'w-full h-[calc(100vh-6.72rem)] overflow-auto gap-4 stream-container'} className2={'w-full h-[calc(100vh-.72rem)] relative'} />
+                    <RenderStream streamDetails={streamDetails} handleMainBox={handleMainBox} otherStream={otherStream} className1={'w-full h-[calc(100vh-6.72rem)] overflow-auto gap-4 stream-container'} className2={'w-full h-[calc(100vh-6.72rem)] relative'} />
                 </div>
 
 
@@ -663,6 +663,7 @@ const handleshareScreen=async ()=>{
             <canvas ref={canvasRef} className="hidden" />
             <video autoPlay ref={inputVideoRef} width={500} height={320} className="hidden" />
             <video autoPlay ref={inputVideoRef2} width={500} height={320} className="hidden" />
+            {/* <div className=' mb-10'></div> */}
         </div>
     )
 }

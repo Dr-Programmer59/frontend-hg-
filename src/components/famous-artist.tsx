@@ -170,7 +170,8 @@ export default function CreativeFamousArtists() {
                   visible: { x: 0, opacity: 1 },
                 }}
               >
-                <Image
+                <img
+                //@ts-ignore
                   src={filteredArtists[currentArtist].image}
                   alt={filteredArtists[currentArtist].name}
                   layout="fill"
